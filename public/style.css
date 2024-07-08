@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #000; /* Black background for gaming look */
+    color: #fff; /* White text for contrast */
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff; 
+    text-shadow: 0 0 10px #595a59, 0 0 20px #595a59, 0 0 30px #595a59, 0 0 40px #595a59;
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    animation: glow 1.5s infinite alternate;
+}
+
+.gaming-subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    animation: glow 1.5s infinite alternate;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    position: relative;
+    z-index: 1; /* Ensure grid is above the video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(73, 73, 73, 0.8); /* Semi-transparent background for better visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Soft shadow for 3D effect */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(15, 20px);
+    gap: 3px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for grid */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for grid */
+    border-radius: 10px;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    border-radius: 3px; /* Rounded corners for cells */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Soft shadow for cells */
+}
+
+.cell.active {
+    background-color: var(--active-color);
+    box-shadow: 0 0 5px var(--active-color); /* Neon glow effect for active cells */
+}
+
+.cell.fading {
+    background-color: var(--fading-color);
+    box-shadow: 0 0 5px var(--fading-color); /* Soft shadow for fading cells */
+}
