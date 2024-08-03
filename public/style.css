@@ -5,10 +5,10 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    overflow: hidden; /* Prevent scrolling */
-    background-color: #000; /* Black background for gaming look */
-    color: #fff; /* White text for contrast */
-}
+    overflow: hidden; 
+    background-color: #000;
+    color: #fff; 
+  }
 
 #background-video {
     position: fixed;
@@ -20,82 +20,106 @@ body {
     z-index: -1;
 }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: #ffffff; 
-    text-shadow: 0 0 10px #595a59, 0 0 20px #595a59, 0 0 30px #595a59, 0 0 40px #595a59;
-}
-
-.header {
+  .App {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .header h1 {
     text-align: center;
     margin-top: 20px;
-}
-
-.header h1 {
+    font-size: 30px;
+  }
+  
+ .header h1 {
     font-size: 2.5rem;
     margin: 0;
     animation: glow 1.5s infinite alternate;
-}
-
-.gaming-subtitle {
+  }
+  
+  .header h3 {
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin-top: 10px;
     animation: glow 1.5s infinite alternate;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
-.grid-container {
-    position: relative;
-    z-index: 1; /* Ensure grid is above the video */
+  }
+  
+  
+  .input-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(73, 73, 73, 0.8); /* Semi-transparent background for better visibility */
-    padding: 20px;
+    margin: 10px 10px;
+  }
+  
+  .input-container label {
+    margin: 0 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+  
+  .input-container input {
+    margin-left: 5px;
+    width: 50px;
+    margin-top: 5px;
+    
+  }
+  
+  .input-container button {
+    background-color: #ff69b4;
+    border: none;
+    padding: 5px 5px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  
+  .input-container button:hover {
+    background-color: #e01010;
+  }
+  
+  .grid-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0.1, 0, 0, 0.1); 
+    padding: 0px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Soft shadow for 3D effect */
-}
-
-.grid {
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.979);
+  }
+  
+  .grid {
     display: grid;
     grid-template-columns: repeat(20, 20px);
     grid-template-rows: repeat(15, 20px);
     gap: 3px;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for grid */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border for grid */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     border-radius: 10px;
-}
-
-.cell {
+  }
+  
+  .cell {
     width: 20px;
     height: 20px;
     background-color: #000;
     transition: background-color 0.5s, box-shadow 0.5s;
-    border-radius: 3px; /* Rounded corners for cells */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Soft shadow for cells */
-}
-
-.cell.active {
+    border-radius: 0px;
+    box-shadow: 0 0 5px rgba(55, 55, 55, 0.5);
+  }
+  
+  .cell.active {
     background-color: var(--active-color);
-    box-shadow: 0 0 5px var(--active-color); /* Neon glow effect for active cells */
-}
-
-.cell.fading {
+    box-shadow: 0 0 1.5px var(--active-color);
+  }
+  
+  .cell.fading {
     background-color: var(--fading-color);
-    box-shadow: 0 0 5px var(--fading-color); /* Soft shadow for fading cells */
-}
+    box-shadow: 0 0 1.5px var(--fading-color);
+    opacity: 0.5;
+  }  
